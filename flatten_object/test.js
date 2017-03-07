@@ -42,13 +42,18 @@ describe('flatten', function() {
     "visits.1.dealer": "DEAL-002"
   }
 
+  var result_simple = {
+    "person.0.firstName": "John",
+    "person.0.lastName": "Green"
+  }
+
   it('will return another object', function() {
     assert.notEqual(flatten(obj), obj);
   });
 
 
   it('will flatten a simple object', function() {
-    assert.deepEqual(flatten(obj), result);
+    assert.deepEqual(flatten({ person: [{ firstName: "John", lastName: "Green" }]}), result_simple);
   });
 
   it('will flatten an object', function() {
