@@ -29,7 +29,7 @@ describe('flatten', function() {
     "car.model": "Civic",
     "car.revisions.0.miles": 10150,
     "car.revisions.0.code": "REV01",
-    "car.revisions.0.changes": ,
+    "car.revisions.0.changes": "",
     "car.revisions.1.miles": 20021,
     "car.revisions.1.code": "REV02",
     "car.revisions.1.changes.0.type": "asthetic",
@@ -42,7 +42,7 @@ describe('flatten', function() {
     "visits.1.dealer": "DEAL-002"
   }
 
-  it('will return another array', function() {
+  it('will return another object', function() {
     assert.notEqual(flatten(obj), obj);
   });
 
