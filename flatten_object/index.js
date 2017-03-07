@@ -8,7 +8,7 @@ var flatten_object = function flatten(obj, item) {
 			var flat_object = flatten_object(obj[i]);
 
 			for (var x in flat_object) {
-				if (!flatObject.hasOwnProperty(x)) continue;
+				if (!flat_object.hasOwnProperty(x)) continue;
 
 				item[i + '.' + x] = flat_object[x];
 			}
@@ -16,6 +16,8 @@ var flatten_object = function flatten(obj, item) {
 			item[i] = obj[i];
 		}
   }
+
+  return item;
 };
 
 module.exports = flatten_object;
